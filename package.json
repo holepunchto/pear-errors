@@ -1,6 +1,6 @@
 {
   "name": "pear-errors",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "index.js",
   "type": "commonjs",
   "description": "Pear Core Error Types",
