@@ -22,7 +22,7 @@ class PearError extends Error {
   static ERR_UNKNOWN = ERR_UNKNOWN
   static ERR_LEGACY = ERR_LEGACY
   static known = known
-  constructor (msg, fn = PearError, info = null, stackless = false) {
+  constructor(msg, fn = PearError, info = null, stackless = false) {
     super(msg)
     this.code = fn.name
     this.name = fn.name
@@ -32,91 +32,96 @@ class PearError extends Error {
   }
 }
 
-function known (prefix = 'ERR_', ...prefixes) {
-  return [...Object.getOwnPropertyNames(PearError).filter((name) => name.startsWith(prefix)), ...prefixes.flatMap((prefix) => known(prefix))]
+function known(prefix = 'ERR_', ...prefixes) {
+  return [
+    ...Object.getOwnPropertyNames(PearError).filter((name) =>
+      name.startsWith(prefix)
+    ),
+    ...prefixes.flatMap((prefix) => known(prefix))
+  ]
 }
 
-function ERR_INVALID_INPUT (msg, info = null) {
+function ERR_INVALID_INPUT(msg, info = null) {
   return new PearError(msg, ERR_INVALID_INPUT, info)
 }
 
-function ERR_INVALID_LINK (msg, info = null) {
+function ERR_INVALID_LINK(msg, info = null) {
   return new PearError(msg, ERR_INVALID_LINK, info)
 }
 
-function ERR_INVALID_APPLING (msg, info = null) {
+function ERR_INVALID_APPLING(msg, info = null) {
   return new PearError(msg, ERR_INVALID_APPLING, info)
 }
 
-function ERR_INVALID_APP_NAME (msg, info = null) {
+function ERR_INVALID_APP_NAME(msg, info = null) {
   return new PearError(msg, ERR_INVALID_APP_NAME, info)
 }
 
-function ERR_INVALID_APP_STORAGE (msg, info = null) {
+function ERR_INVALID_APP_STORAGE(msg, info = null) {
   return new PearError(msg, ERR_INVALID_APP_STORAGE, info)
 }
 
-function ERR_INVALID_PROJECT_DIR (msg, info = null) {
+function ERR_INVALID_PROJECT_DIR(msg, info = null) {
   return new PearError(msg, ERR_INVALID_PROJECT_DIR, info)
 }
 
-function ERR_INVALID_GC_RESOURCE (msg, info = null) {
+function ERR_INVALID_GC_RESOURCE(msg, info = null) {
   return new PearError(msg, ERR_INVALID_GC_RESOURCE, info)
 }
 
-function ERR_INVALID_CONFIG (msg, info = null) {
+function ERR_INVALID_CONFIG(msg, info = null) {
   return new PearError(msg, ERR_INVALID_CONFIG, info)
 }
 
-function ERR_INVALID_TEMPLATE (msg, info = null) {
+function ERR_INVALID_TEMPLATE(msg, info = null) {
   return new PearError(msg, ERR_INVALID_TEMPLATE, info)
 }
 
-function ERR_PERMISSION_REQUIRED (msg, info = {}) {
+function ERR_PERMISSION_REQUIRED(msg, info = {}) {
   return new PearError(msg, ERR_PERMISSION_REQUIRED, info)
 }
 
-function ERR_SECRET_NOT_FOUND (msg, info = null) {
+function ERR_SECRET_NOT_FOUND(msg, info = null) {
   return new PearError(msg, ERR_SECRET_NOT_FOUND, info)
 }
 
-function ERR_CONNECTION (msg, info = null) {
+function ERR_CONNECTION(msg, info = null) {
   return new PearError(msg, ERR_CONNECTION, info)
 }
 
-function ERR_INVALID_MANIFEST (msg, info = null) {
+function ERR_INVALID_MANIFEST(msg, info = null) {
   return new PearError(msg, ERR_INVALID_MANIFEST, info)
 }
 
-function ERR_INTERNAL_ERROR (msg, info = null) {
+function ERR_INTERNAL_ERROR(msg, info = null) {
   return new PearError(msg, ERR_INTERNAL_ERROR, info)
 }
 
-function ERR_UNSTAGED (msg, info = null) {
+function ERR_UNSTAGED(msg, info = null) {
   return new PearError(msg, ERR_UNSTAGED, info)
 }
 
-function ERR_NOT_FOUND (msg, info = null) {
+function ERR_NOT_FOUND(msg, info = null) {
   return new PearError(msg, ERR_NOT_FOUND, info)
 }
 
-function ERR_DIR_NONEMPTY (msg, info = null) {
+function ERR_DIR_NONEMPTY(msg, info = null) {
   return new PearError(msg, ERR_DIR_NONEMPTY, info)
 }
 
-function ERR_OPERATION_FAILED (msg, info = {}) {
+function ERR_OPERATION_FAILED(msg, info = {}) {
   return new PearError(msg, ERR_OPERATION_FAILED, info)
 }
 
-function ERR_ASSERTION (msg, info = null) {
+function ERR_ASSERTION(msg, info = null) {
   return new PearError(msg, ERR_ASSERTION, info)
 }
 
-function ERR_UNKNOWN (msg, info = null) {
+function ERR_UNKNOWN(msg, info = null) {
   return new PearError(msg, ERR_UNKNOWN, info)
 }
 
-function ERR_LEGACY (msg, info = null) {
+function ERR_LEGACY(msg, info = null) {
   return new PearError(msg, ERR_LEGACY, info, true)
 }
 
