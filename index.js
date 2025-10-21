@@ -15,6 +15,7 @@ class PearError extends Error {
   static ERR_DIR_NONEMPTY = ERR_DIR_NONEMPTY
   static ERR_OPERATION_FAILED = ERR_OPERATION_FAILED
   static ERR_SECRET_NOT_FOUND = ERR_SECRET_NOT_FOUND
+  static ERR_FILE_NOT_FOUND = ERR_FILE_NOT_FOUND
   static ERR_CONNECTION = ERR_CONNECTION
   static ERR_INVALID_MANIFEST = ERR_INVALID_MANIFEST
   static ERR_ASSERTION = ERR_ASSERTION
@@ -77,6 +78,10 @@ function ERR_PERMISSION_REQUIRED (msg, info = {}) {
 
 function ERR_SECRET_NOT_FOUND (msg, info = null) {
   return new PearError(msg, ERR_SECRET_NOT_FOUND, info)
+}
+
+function ERR_FILE_NOT_FOUND (msg, info = null) {
+  return new PearError(msg, ERR_FILE_NOT_FOUND, info)
 }
 
 function ERR_CONNECTION (msg, info = null) {
