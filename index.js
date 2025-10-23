@@ -12,6 +12,7 @@ class PearError extends Error {
   static ERR_PERMISSION_REQUIRED = ERR_PERMISSION_REQUIRED
   static ERR_INTERNAL_ERROR = ERR_INTERNAL_ERROR
   static ERR_UNSTAGED = ERR_UNSTAGED
+  static ERR_NOT_FOUND = ERR_NOT_FOUND
   static ERR_DIR_NONEMPTY = ERR_DIR_NONEMPTY
   static ERR_OPERATION_FAILED = ERR_OPERATION_FAILED
   static ERR_SECRET_NOT_FOUND = ERR_SECRET_NOT_FOUND
@@ -93,6 +94,10 @@ function ERR_INTERNAL_ERROR (msg, info = null) {
 
 function ERR_UNSTAGED (msg, info = null) {
   return new PearError(msg, ERR_UNSTAGED, info)
+}
+
+function ERR_NOT_FOUND (msg, info = null) {
+  return new PearError(msg, ERR_NOT_FOUND, info)
 }
 
 function ERR_DIR_NONEMPTY (msg, info = null) {
