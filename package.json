@@ -18,5 +18,18 @@
     "lunte": "^1.0.0",
     "prettier": "^3.6.2",
     "prettier-config-holepunch": "^1.0.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holepunchto/pear-errors.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/holepunchto/pear-errors/issues"
+  },
+  "homepage": "https://github.com/holepunchto/pear-errors#readme"
 }
